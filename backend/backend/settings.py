@@ -102,17 +102,19 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 16,
 }
 
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'Sociality API',
-    'DESCRIPTION': 'Scraping API for sociality',
-    'VERSION': '1.0.0',
+    "TITLE": "Sociality API",
+    "DESCRIPTION": "Scraping API for sociality",
+    "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "CONTACT": {
         "name": "Umit Demir",
         "email": "umitde296@gmail.com",
         "url": "https://umitde.com",
     },
-    'COMPONENT_SPLIT_REQUEST': True
+    "COMPONENT_SPLIT_REQUEST": True,
 }
