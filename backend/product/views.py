@@ -21,6 +21,6 @@ class ProductScrapeAPIView(GenericAPIView):
 
         url = serializer.validated_data.get("url")
 
-        create_product_with_url(url)
+        product = create_product_with_url(url)
 
-        return Response({"message": "ok"})
+        return Response({"message": "created", "product_id": product.id})
