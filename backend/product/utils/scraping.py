@@ -1,3 +1,4 @@
+import re
 from typing import TYPE_CHECKING
 
 from product import ProductData
@@ -28,4 +29,11 @@ def _scrape_name(soup: "BeautifulSoup") -> str:
 
 def _scrape_price(soup: "BeautifulSoup") -> str:
     price = soup.find("p", class_="wt-text-title-03")
-    return price.text.strip()
+    return _clean_product_price(price.text.strip())
+
+
+def _clean_product_price(price: str) -> str:
+    splitted_price = re.split("Price:", price)
+    if len(splitted_price) == 2:
+        return splitted_price[1].strip()
+    return price
