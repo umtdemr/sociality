@@ -1,0 +1,39 @@
+version: "3.8"
+
+
+services:
+  sociality-backend:
+    container_name: sociality-backend
+    build:
+      context: ./backend
+    command: >
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    environment: 
+      - PG_DATABASE=sociality
+      - PG_USER=sociality
+      - PG_PASSWORD=sociality
+      - PG_PHOST=sociality-database
+    depends_on:
+      - sociality-database
+    ports:
+      - 8003:8000
+    volumes:
+      - ./backend:/usr/src/app
+
+  sociality-database:
+    container_name: sociality-database
+    image: postgres:13-alpine
+    environment: 
+      - POSTGRES_DB=sociality
+      - POSTGRES_USER=sociality
+      - POSTGRES_PASSWORD=sociality
+    expose: 
+      - 5432
+    volumes:
+      - sociality-database:/var/lib/postgresql/data
+
+volumes:
+  sociality-database:
+
