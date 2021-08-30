@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     # Third-party apps
     "rest_framework",
     "corsheaders",
+    "drf_spectacular",
     # Local Apps
     "product",
 ]
@@ -97,3 +98,21 @@ STATICFILES_DIRS = [BASE_DIR / "static_dev"]
 
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Sociality API',
+    'DESCRIPTION': 'Scraping API for sociality',
+    'VERSION': '1.0.0',
+    "SERVE_INCLUDE_SCHEMA": False,
+    "CONTACT": {
+        "name": "Umit Demir",
+        "email": "umitde296@gmail.com",
+        "url": "https://umitde.com",
+    },
+    'COMPONENT_SPLIT_REQUEST': True
+}
