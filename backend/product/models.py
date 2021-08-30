@@ -14,7 +14,10 @@ class Product(models.Model):
     image_link = models.URLField(
         _("Product Image Link"),
     )
-    price = models.PositiveIntegerField(_("Product Price"))
+    price = models.CharField(
+        _("Product Price"),
+        max_length=50,
+    )
 
     class Meta:
         indexes = [models.Index(fields=["name"], name="product_name_idx")]
