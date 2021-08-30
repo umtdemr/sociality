@@ -1,6 +1,6 @@
 from typing import TYPE_CHECKING
 
-from rest_framework.generics import GenericAPIView, ListAPIView
+from rest_framework.generics import GenericAPIView, ListAPIView, RetrieveAPIView
 from rest_framework.response import Response
 
 from .serializers import ProductLinkInputSerializer, ProductSerializer
@@ -27,5 +27,10 @@ class ProductScrapeAPIView(GenericAPIView):
 
 
 class ProductListAPIView(ListAPIView):
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
+
+
+class ProductRetrieveAPIView(RetrieveAPIView):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
