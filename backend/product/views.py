@@ -5,6 +5,7 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 
 from .serializers import ProductLinkInputSerializer
+from .utils import create_product_with_url
 
 
 if TYPE_CHECKING:
@@ -19,5 +20,7 @@ class ProductScrapeAPIView(GenericAPIView):
         serializer.is_valid(raise_exception=True)
 
         url = serializer.validated_data.get("url")
+
+        create_product_with_url(url)
 
         return Response({"message": "ok"})

@@ -1,15 +1,15 @@
 from typing import TYPE_CHECKING
 
 from product import ProductData
-from product.utils.request import get_url_with_soup
+from product.utils.request import get_content_sync
 
 
 if TYPE_CHECKING:
     from bs4 import BeautifulSoup
 
 
-def scrape_content(url):
-    soup = get_url_with_soup(url)
+def scrape_content(url: str):
+    soup = get_content_sync(url)
     image_link = _scrape_img(soup)
     name = _scrape_name(soup)
     price_text = _scrape_price(soup)
