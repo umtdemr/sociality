@@ -1,10 +1,11 @@
 import React from 'react'
 
+import ScrapeInput from '../../comonents/scrape-input/scrape-input.component';
 
 const Home = () => {
 	return (
-		<div>
-			this is home
+		<div className="home">
+			<ScrapeInput />
 		</div>
 	)
 }
