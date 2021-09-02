@@ -6,16 +6,13 @@ import ProductList from '../../comonents/product-list/product-list.component';
 
 const Products = () => {
 	const [products, setProducts] = useState([]);
-	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch("http://127.0.0.1:8000/product/list/")
+		let url = `${process.env.REACT_APP_BASE_URL}/product/list/`;
+		fetch(url)
 			.then(res => res.json())
 			.then(res => {
 				setProducts(res.results)
-			})
-			.finally(() => {
-				setLoading(false);
 			})
 	}, [])
 	return (

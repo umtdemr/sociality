@@ -15,7 +15,7 @@ const ScrapeInput = () => {
 		}
 		setLoading(true);
 		fetch(
-			"http://127.0.0.1:8000/product/scrape/",
+			`${process.env.REACT_APP_BASE_URL}/product/scrape/`,
 			{
 				method: "POST",
 				headers: {

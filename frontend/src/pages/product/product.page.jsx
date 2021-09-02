@@ -9,7 +9,7 @@ const Product = () => {
 	const product_id = params.id;
 
 	useEffect(() => {
-		fetch(`http://127.0.0.1:8000/product/${product_id}`)
+		fetch(`${process.env.REACT_APP_BASE_URL}/product/${product_id}`)
 			.then(res => res.json())
 			.then(res => {
 				setProduct(res)
