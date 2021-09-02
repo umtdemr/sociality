@@ -8,6 +8,7 @@ import './App.css';
 import Header from './comonents/header/header.components';
 import Home from "./pages/home/home.component";
 import Products from "./pages/products/products.component";
+import Product from "./pages/product/product.page";
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
 							</Route>
 							<Route exact path="/products" >
 								<Products />
+							</Route>
+							<Route exact path="/product/:id" >
+								<Product />
 							</Route>
 						</Switch>
 				</div>
