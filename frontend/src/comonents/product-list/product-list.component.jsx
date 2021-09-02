@@ -8,7 +8,7 @@ const ProductList = ({products}) => {
 				products.map(product => (
 					<Link className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden" to={"/product/" + product.id}>
 							<div className="flex items-end justify-end h-56 w-full bg-cover">
-								<img src={product.image_link} alt="qwe"/>
+								<img src={product.image_link} alt={product.name}/>
 							</div>
 							<div className="px-5 py-3">
 									<h3 className="text-gray-700 uppercase">{product.name}</h3>
