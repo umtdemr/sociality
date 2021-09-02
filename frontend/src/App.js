@@ -6,8 +6,8 @@ import {
 
 import './App.css';
 import Header from './comonents/header/header.components';
-import Home from "./pages/home/home.component";
-import Products from "./pages/products/products.component";
+import Home from "./pages/home/home.page";
+import Products from "./pages/products/products.page";
 import Product from "./pages/product/product.page";
 
 
