@@ -55,8 +55,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
-
-try:
+if os.environ.get("PG_HOST"):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
@@ -66,13 +65,14 @@ try:
             "PASSWORD": os.environ.get("PG_PASSWORD"),
         }
     }
-except Exception:
+else:
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
