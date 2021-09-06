@@ -28,6 +28,9 @@ const ScrapeInput = () => {
 			.then(res => {
 				if (res.message === "created") {
 					alert(`Success! Product ID: ${res.product_id}`)
+				}else {
+					alert("An error occurred during fetching product. Please make sure you enter the correct product url");
+					console.log(res);
 				}
 			})
 			.finally(() => {
