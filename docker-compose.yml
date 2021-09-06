@@ -14,7 +14,7 @@ services:
       - PG_DATABASE=sociality
       - PG_USER=sociality
       - PG_PASSWORD=sociality
-      - PG_PHOST=sociality-database
+      - PG_HOST=sociality-database
     depends_on:
       - sociality-database
     ports:
