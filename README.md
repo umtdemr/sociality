@@ -1,7 +1,12 @@
-# Sociality Project
+# Sociality Project :pick:
 
-description is going to be made.
+A full stack project that makes scraping product from [Etys.com](https://www.etsy.com).
 
-# TO DO 
 
-- [ ] Postgresql must to be declared in django settings file
+## Technologies that i used
+
+
+
+Backend | Frontend | Database
+------------ | ------------- | -------------
+Django| React JS| Postgresql
