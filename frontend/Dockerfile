@@ -1,8 +1,8 @@
 FROM node:15.4.0-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/frontend
 
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
+ENV PATH /usr/src/frontend/node_modules/.bin:$PATH
 
 COPY package.json .
 COPY yarn.lock .
