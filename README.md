@@ -12,7 +12,7 @@ Backend | Frontend | Database
 Django| React JS| Postgresql
 
 
-## How to try it out
+## How to try
 
 1. Clone this repository.
 2. Go to repository's folder with terminal.
