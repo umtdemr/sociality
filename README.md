@@ -1,4 +1,4 @@
-# Sociality Project :pick:
+# Scraing Full Stack :pick:
 
 A full stack project that makes scraping product from [Etsy.com](https://www.etsy.com).
 
