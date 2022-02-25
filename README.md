@@ -1,4 +1,4 @@
-# Scraing Full Stack :pick:
+# Scraping Full Stack Project :pick:
 
 A full stack project that makes scraping product from [Etsy.com](https://www.etsy.com).
 
