@@ -22,7 +22,7 @@ Django| React JS| Postgresql
 4. Thats it! You are done.
 
 
-## Project Endpoints
+## Endpoint URLS
 
 Backend | Frontend
 ------------ | -------------
